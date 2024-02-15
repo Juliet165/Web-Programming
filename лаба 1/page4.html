@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица услуг</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .highlight {
+            background-color: rgb(253, 215, 255);
+        }   
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Jura&family=Montserrat:ital,wght@1,200;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Таблица с товарами</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Машина</th>
+                <th>Стоимость (руб)</th>
+                <th class="highlight">Вес (кг)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Грузовик</td>
+                <td rowspan="2">10000</td>
+                <td class="highlight">10000</td>
+            </tr>
+            <tr>
+                <td>"Еврофура"</td>
+                <td class="highlight">15000</td>
+            </tr>
+            <tr>
+                <td>Фура</td>
+                <td>1000</td>
+                <td class="highlight">20000</td>
+            </tr>
+            <tr>
+                <td>Легковое авто</td>
+                <td>100</td>
+                <td class="highlight">700</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
