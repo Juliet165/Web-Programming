@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Транспортная компания "ГрузовичОК"</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 80vh;
+        }
+
+        .header,
+        .footer {
+            background-color: #eceba8f6;
+            color: #030101;
+            text-align: center;
+            padding: 20px;
+            flex: 0 0 auto;
+            width: 100%;
+        }
+
+        .menu {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden; /* Добавлено */
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            float: right; /* Добавлено */
+            margin-left: 20px; /* Добавлено */
+        }
+
+        .footer p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+
+            .menu {
+                flex: 0 0 auto;
+                order: -1;
+            }
+
+            .content {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .header,
+            .footer {
+                width: auto;
+                flex: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Транспортная компания "ГрузовичОК"</h1>
+    </div>
+    <div class="container">
+        <div class="content">
+            <h2>Добро пожаловать в транспортную компанию "ГрузовичОК"!</h2>
+            <img src="car.jpg" alt="Фото">
+            <p>Мы - команда профессионалов, готовых предложить вам широкий спектр услуг по грузоперевозкам как по территории Беларуси, так и за ее пределами. Наш опыт и компетентность позволяют нам организовывать перевозку грузов любых типов и масштабов, обеспечивая надежность и точность в каждой поставке.</p>
+            <p>Мы понимаем, что для наших клиентов важно, чтобы их грузы были доставлены вовремя и безопасно. Поэтому мы используем только современное транспортное оборудование, а также предоставляем высококвалифицированный персонал, готовый к ответственной работе. Мы уделяем особое внимание деталям и индивидуальным потребностям каждого клиента.</p>  
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">История</a></li>
+                <li><a href="#">Фотогалерея</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Отзывы</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Адреса</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <p>ГрузовичОК - с нами ваши перевозки всегда будут ОК!</p>
+    </div>
+</body>
+</html>

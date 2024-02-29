@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Транспортная компания "ГрузовичОК"</title>
     <style>
-        body {
+        body
+        {
             margin: 0;
             padding: 0;
+            width: 100%;
             font-family: Arial, sans-serif;
+            box-sizing: border-box;
         }
-
+        
         .header,
         .footer {
             background-color: #eceba8f6;
@@ -18,83 +21,147 @@
             text-align: center;
             padding: 20px;
         }
-
-        .menu {
-            float: left;
+       .menu
+       {
+            background-color: #f2f2f2;
             width: 250px;
-            padding-right: 20px;
+            padding: 10px;
             font-size: 20px;
             margin-right: 20px;
-            background-color: #f2f2f2; 
-        }
-
-        .content {
-            padding: 20px;
-            /*width: calc(100vw - 250px);
-            margin-left:250px;*/
+       }
+       
+       .content
+       {
+            background-color: #ecf2f4;
             font-size: 16px;
-        }
+            padding: 20px;
+            width: 100%; 
+       }
 
-        h2 {
-            text-align: center;
-        }
+      .content-title
+      {
+        font-size: 30px;
+        
 
-        .content img {
-            float: left;
-            margin-right: 20px;
-            margin-bottom: 20px;
-            max-width: 200px;
-        }
+      }
+      .img1
+       {
+        height: 200px;
+        float: left;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom:10px;
+       }
+   
+    .footer-title
+    {
+        font-size: 18px; 
+        text-align: center;
+    }
 
-        .footer h1 {
+    .text
+    {
+   
+        font-size: 20px;
+  
+    }
+    .text2{
+        clear: both;
+        font-size: 25px;
+    }
+    .home{
+        display: flex;
+    }
+    .footer h1 {
             font-size: 18px; 
         }
-
-        @media only screen and (max-width: 768px) {
-            .menu,
-            .content img {
-                float: none;
-                width: 100%;
-                margin: 0 auto 20px;
-                display: block;
-            }
+    @media(max-width:1024px)
+    {
+        .main-title,.header,.footer
+        {
+            font-size: 35px;
+        
         }
+    .main 
+    {
+        font-size: 15px;
+        padding: 50px;
+    }
+
+    @media(max-width:755px)
+    {
+    
+    .naw-title,.main-title,.header,.footer
+        {
+            font-size: 30px;
+        }
+        .text,.text2{
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .img1
+    {
+        
+        margin-right: 20px;
+        margin-bottom: 20px;
+        max-width: 200px;
+       }
+
+    a{
+        font-size: 15px;
+    }
+    }
+    @media(max-width:489px)
+    {
+    .naw-title,.main-title,.header,.footer
+    {
+        font-size: 25px;
+        text-align: center;
+    }
+    .text,.text2{
+        font-size: 10px;
+    }
+
+    }
+
     </style>
 </head>
 <body>
-    <div class="header">
+    <div  class = "header">
         <h1>Транспортная компания "ГрузовичОК"</h1>
+      </div>
+    <div class = "home">
+      <div class="menu">
+        <ul>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">История</a></li>
+            <li><a href="#">Фотогалерея</a></li>
+            <li>
+                <a href="#">Услуги</a>
+                <ul>
+                    <li><a href="#">Грузоперевозки</a></li>
+                    <li><a href="#">Перевозка опасных грузов</a></li>
+                    <li><a href="#">Международные перевозки</a></li>
+                    <li><a href="#">Экспресс-доставка</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Адреса</a></li>
+        </ul>
+      </div>
+    
+      <div class="main">
+        <h2 class = "main-title" id ="Track" >Добро пожаловать в транспортную компанию "ГрузовичОК"!</h2>
+                <img class = "img1" src = "car.jpg">
+                <p>Мы - команда профессионалов, готовых предложить вам широкий спектр услуг по грузоперевозкам как по территории Беларуси, так и за ее пределами. Наш опыт и компетентность позволяют нам организовывать перевозку грузов любых типов и масштабов, обеспечивая надежность и точность в каждой поставке.</p>
+                <p>Мы понимаем, что для наших клиентов важно, чтобы их грузы были доставлены вовремя и безопасно. Поэтому мы используем только современное транспортное оборудование, а также предоставляем высококвалифицированный персонал, готовый к ответственной работе. Мы уделяем особое внимание деталям и индивидуальным потребностям каждого клиента.</p>
+                <p>Наша миссия - обеспечить нашим клиентам максимальное удовлетворение от сотрудничества с нами. Мы стремимся к высокому качеству обслуживания, оперативности и прозрачности в работе, чтобы наши партнеры могли быть уверены в надежности наших услуг. Доверьте свои грузы нам, и мы сделаем все возможное, чтобы они были доставлены вовремя и в сохранности!</p>
+      </div>
     </div>
-    <div class="container">
-        <div class="menu">
-            <ul>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">История</a></li>
-                <li><a href="#">Фотогалерея</a></li>
-                <li>
-                    <a href="#">Услуги</a>
-                    <ul>
-                        <li><a href="#">Грузоперевозки</a></li>
-                        <li><a href="#">Перевозка опасных грузов</a></li>
-                        <li><a href="#">Международные перевозки</a></li>
-                        <li><a href="#">Экспресс-доставка</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Отзывы</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Адреса</a></li>
-            </ul>
-        </div>
-        <div class="content">
-            <h2>Добро пожаловать в транспортную компанию "ГрузовичОК"!</h2>
-            <img src="car.jpg" alt="Ваше фото">
-            <p>Мы - команда профессионалов, готовых предложить вам широкий спектр услуг по грузоперевозкам как по территории Беларуси, так и за ее пределами. Наш опыт и компетентность позволяют нам организовывать перевозку грузов любых типов и масштабов, обеспечивая надежность и точность в каждой поставке.</p>
-            <p>Мы понимаем, что для наших клиентов важно, чтобы их грузы были доставлены вовремя и безопасно. Поэтому мы используем только современное транспортное оборудование, а также предоставляем высококвалифицированный персонал, готовый к ответственной работе. Мы уделяем особое внимание деталям и индивидуальным потребностям каждого клиента.</p>
-            <p>Наша миссия - обеспечить нашим клиентам максимальное удовлетворение от сотрудничества с нами. Мы стремимся к высокому качеству обслуживания, оперативности и прозрачности в работе, чтобы наши партнеры могли быть уверены в надежности наших услуг. Доверьте свои грузы нам, и мы сделаем все возможное, чтобы они были доставлены вовремя и в сохранности!</p>
-        </div>
-    </div>
-    <div class="footer">
-        <h1>ГрузовичОК - с нами ваши перевозки всегда будут ОК!</h1>
-    </div>
+      <div class="footer">
+       <h1>ГрузовичОК - с нами ваши перевозки всегда будут ОК!</h1>
+      </div>
 </body>
 </html>

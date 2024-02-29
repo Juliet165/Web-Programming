@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            width: 100%;
         }
 
         table {
@@ -44,13 +45,15 @@
         .content {
             padding: 20px;
             font-size: 16px;
+            width: 100%;
         }
 
         img {
+            height: 200px;
             float: left;
-            margin-right: 20px;
-            margin-bottom: 20px;
-            max-width: 200px;
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-bottom:10px;
         }
 
         .footer p {
@@ -59,9 +62,9 @@
         }
 
         @media only screen and (max-width: 768px) {
-            .menu {
+            /* .menu {
                 width: 100%;
-            }
+            } */
 
             img {
                 float: none;
@@ -71,7 +74,7 @@
     </style>
 </head>
 <body>
-    <table>
+    <table cellpadding="0" cellspacing="0">
         <tr>
             <td colspan="2" class="header">
                 <h1>Транспортная компания "ГрузовичОК"</h1>
