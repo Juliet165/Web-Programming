@@ -17,7 +17,10 @@
     <script>
         function AddTransport() {
             let key = prompt("Введите название транспортного средства:");
-            let value = prompt("Введите описание транспортного средства:");
+            let value = prompt("Введите описание транспортного средства:"); 
+            if (value === null || key === null){
+                return;
+            }
             AddValue(key, value);
         }
 

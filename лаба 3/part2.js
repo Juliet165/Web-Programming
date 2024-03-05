@@ -1,4 +1,3 @@
-
 let transportHash = {};
 
 function AddValue(key, value) {
@@ -15,7 +14,7 @@ function GetValueInfo(key) {
     if (transportHash.hasOwnProperty(key)) {
         return transportHash[key];
     } else {
-        return "нет информации";
+        return "Нет информации";
     }
 }
 
