@@ -14,7 +14,7 @@ class THashStorage {
         }
         this.storage[key] = value;
     }
-
+2
     GetValue(key) {
         return this.storage[key];
     }

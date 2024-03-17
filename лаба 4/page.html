@@ -3,10 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Транспортная компания</title>
+    <title>Транспортная компания ГрузовичОК</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #f5db45; /* желтый цвет */
+            color: #000;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <div class="container">
+        <h1>Транспортная компания ГрузовичОК</h1>
         <input onclick="AddTransport();" value="Ввод информации о транспортном средстве" type="button">
         <input onclick="DeleteTransport();" value="Удаление информации о транспортном средстве" type="button">
         <input onclick="GetTransportInfo();" value="Получение информации о транспортном средстве" type="button">
