@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transport Company Menu</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    nav {
+        background-color: #333;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    li {
+        float: left;
+    }
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    li a:hover {
+        background-color: #555;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        min-width: 160px;
+        z-index: 1;
+    }
+    .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        display: block;
+        text-align: left;
+        text-decoration: none;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li class="dropdown">
+            <a href="#">Transport Company</a>
+            <div class="dropdown-content" id="transport-menu">
+                <!-- Menu items will be dynamically generated here -->
+            </div>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<script>
+    // Array with menu items and sub-items
+    var menuItems = [
+        { name: "Services", subItems: ["Trucking", "Shipping", "Logistics"] },
+        { name: "Fleet", subItems: ["Trucks", "Ships", "Planes"] },
+        { name: "Locations", subItems: ["North America", "Europe", "Asia"] }
+    ];
+
+    // Function to generate the menu dynamically
+    function generateMenu() {
+        var menu = document.getElementById("transport-menu");
+        menu.innerHTML = ""; // Clear previous menu items
+
+        menuItems.forEach(item => {
+            var menuItem = document.createElement("div");
+            menuItem.innerHTML = "<strong>" + item.name + "</strong>";
+
+            if (item.subItems.length > 0) {
+                var subMenu = document.createElement("div");
+                item.subItems.forEach(subItem => {
+                    var subMenuItem = document.createElement("a");
+                    subMenuItem.textContent = subItem;
+                    subMenu.appendChild(subMenuItem);
+                });
+                menuItem.appendChild(subMenu);
+            }
+
+            menu.appendChild(menuItem);
+        });
+    }
+
+    // Call the function to generate the menu
+    generateMenu();
+</script>
+
+</body>
+</html>
