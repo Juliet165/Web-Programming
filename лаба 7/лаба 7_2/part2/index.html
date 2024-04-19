@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Транспортная компания</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #f3e635;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #f3e635;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #706e00;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id='IPage'></div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    "use strict";
+    window.onhashchange = switchToStateFromURLHash;
+    let SPAState = {pagename: "Main"};
+
+    function switchToStateFromURLHash() {
+        let URLHash = window.location.hash;
+        let stateStr = URLHash.substr(1);
+
+        if (stateStr != "") {
+            let parts = stateStr.split("_");
+            SPAState = { pagename: parts[0] };
+        } else {
+            SPAState = { pagename: "Main" };
+            switchToMainPage();
+        }
+
+        console.log("New state: ");
+        console.log(SPAState);
+
+        let pageHTML = "";
+        switch (SPAState.pagename) {
+            case "Main":
+                pageHTML += "<h2>Добро пожаловать в транспортную компанию!</h2>"; pageHTML += `<img src="car.jpg" alt="Фото">`;
+                pageHTML += "<p>Мы - команда профессионалов, готовых предложить вам широкий спектр услуг по грузоперевозкам как по территории Беларуси, так и за ее пределами. Наш опыт и компетентность позволяют нам организовывать перевозку грузов любых типов и масштабов, обеспечивая надежность и точность в каждой поставке.</p>";
+                pageHTML += "<p>Мы понимаем, что для наших клиентов важно, чтобы их грузы были доставлены вовремя и безопасно. Поэтому мы используем только современное транспортное оборудование, а также предоставляем высококвалифицированный персонал, готовый к ответственной работе.</p>"; 
+                pageHTML += "<button onclick='switchToServicesPage()'>Услуги</button>";
+                break;
+            case "Services":
+            case "About":
+                    $.ajax({
+                        url: 'transport.json',
+                        dataType: 'json',
+                        success: function (data) {
+                            pageHTML += "<div id='about'><h3>ГрузовичОК</h3><table id='services'></table><table id='fleet'></table></div>";
+                            pageHTML += "<button onclick='switchToPage(\"Main\")'>На главную</button>";
+                            document.getElementById('IPage').innerHTML = pageHTML;
+                            displayItems(data.transport_company.services, 'services');
+                            displayItems(data.transport_company.fleet, 'fleet');
+                            
+                        }
+                    });
+                    break;
+                break;
+        }
+        document.getElementById('IPage').innerHTML = pageHTML;
+    }
+
+    
+    function displayItems(items, tableId) {
+    var table = $('#' + tableId);
+    
+    var headerRow = '<tr><th>Имя</th><th>Цена</th><th>Описание</th></tr>';
+    table.append(headerRow);
+
+    $.each(items, function (index, item) {
+        var row = '<tr><td>' + item.name + '</td><td>' + item.price + '</td><td>' + item.description + '</td></tr>';
+        table.append(row);
+    });
+}
+
+        function switchToState(newState) {
+            let stateStr = newState.pagename;
+            location.hash = stateStr;
+        }
+
+        function switchToMainPage() {
+            switchToState({ pagename: "Main" });
+        }
+
+
+        function switchToServicesPage() {
+            switchToState({ pagename: "Services" });
+        }
+
+        switchToStateFromURLHash();
+</script>
+
+</body>
+</html>
